@@ -11,7 +11,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const categories = await getAllCategories();
     const posts = await getAllPosts();
 
-    // Генерируем URL для категорий
     const categoryUrls = categories.map((category) => ({
         url: `${siteUrl}/${transliterate(category.name)
             .replace(/[^a-zA-Zа-яА-Я0-9\s]/g, "")
