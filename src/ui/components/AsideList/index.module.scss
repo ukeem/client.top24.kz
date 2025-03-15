@@ -1,0 +1,13 @@
+/** @format */
+
+.AsideListItem {
+    position: relative;
+
+    .image {
+        position: relative;
+        aspect-ratio: 2 / 1;
+        border: 1px solid var(--light);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}

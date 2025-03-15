@@ -1,0 +1,95 @@
+/** @format */
+
+:root {
+    --dark: #000;
+    --accent: #ff3d00;
+    --bg: #fff;
+    --light: #78909c;
+}
+
+html,
+body {
+    max-width: 100vw;
+    /* overflow-x: hidden; */
+}
+
+body {
+    color: var(--dark);
+    background: var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    scrollbar-width: none; /* Для Firefox */
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari */
+}
+
+* {
+    box-sizing: border-box;
+    /* padding: 0;
+    margin: 0; */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+}
+
+a:hover {
+    filter: brightness(80%);
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--accent);
+    line-height: 120%;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 120%;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 120%;
+}
+
+.nowrapText {
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.categoryPostList {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 768px) {
+        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+aside {
+    height: 100%;
+}
+.categoryTitle {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: var(--dark);
+    span {
+        color: var(--accent);
+    }
+
+    @media (min-width: 768px) {
+        font-size: 28px;
+    }
+}

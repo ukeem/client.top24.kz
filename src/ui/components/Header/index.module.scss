@@ -1,0 +1,27 @@
+/** @format */
+
+.header {
+    height: 60px;
+}
+.logo {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 100%;
+    text-transform: uppercase;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+
+    span:nth-child(1) {
+        color: var(--dark);
+    }
+    span:nth-child(2) {
+        color: var(--accent);
+    }
+    span:nth-child(3) {
+        margin-left: 8px;
+        text-transform: none;
+        font-size: 16px;
+        color: var(--light);
+    }
+}

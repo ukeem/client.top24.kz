@@ -1,0 +1,32 @@
+/** @format */
+
+.CategoryPostList {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+
+.categoryName {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    // text-transform: uppercase;
+    color: var(--dark);
+    span {
+        color: var(--accent);
+    }
+
+    @media (min-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.googleAdsense {
+    width: 100%;
+}

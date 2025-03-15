@@ -1,0 +1,30 @@
+/** @format */
+
+.asideWrap {
+    position: static;
+    top: auto;
+    height: auto;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    @media (min-width: 992px) {
+        position: sticky;
+        top: 84px;
+        height: calc(100vh - 144px);
+        overflow-y: auto;
+    }
+
+    h4 {
+        font-size: 28px;
+        line-height: 28px;
+        color: var(--accent);
+        margin: 0 0 16px;
+
+        @media (min-width: 992px) {
+            font-size: 20px;
+        }
+    }
+}
+.asideWrap::-webkit-scrollbar {
+    display: none; /* Для Chrome, Safari */
+}

@@ -1,0 +1,39 @@
+/** @format */
+
+.Nav {
+    height: 60px;
+    background-color: var(--dark);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    .NavWrap {
+        width: 100%;
+        overflow-x: auto;
+        gap: 24px;
+
+        a {
+            font-size: 16px;
+            height: 60px;
+            text-transform: capitalize;
+            line-height: 60px;
+
+            &.active {
+                color: var(--accent);
+            }
+        }
+    }
+    .mainLink {
+        gap: 4px;
+
+        svg path {
+            fill: #fff;
+        }
+
+        &.active {
+            svg path {
+                fill: var(--accent);
+            }
+        }
+    }
+}

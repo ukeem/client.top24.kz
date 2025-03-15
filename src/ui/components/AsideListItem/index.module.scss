@@ -1,0 +1,35 @@
+/** @format */
+.AsideListItemWrap {
+    position: relative;
+
+    .categoryLink {
+        position: absolute;
+        z-index: 2;
+        font-size: 14px;
+        padding: 2px 8px;
+        background-color: var(--accent);
+        color: #fff;
+        border-radius: 4px;
+        left: 8px;
+        top: 8px;
+        text-transform: capitalize;
+    }
+}
+.AsideListItem {
+    position: relative;
+
+    .image {
+        position: relative;
+        aspect-ratio: 2 / 1;
+        border: 1px solid var(--light);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin: 0;
+        height: 39px;
+        overflow: hidden;
+    }
+}
