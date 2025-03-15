@@ -23,7 +23,7 @@ export default function AsideListItem({ post }: AsideListItemProps) {
 			>
 				<div className={`${s.image} mb-2`}>
 					<Image
-						src={`${process.env.NEXT_PUBLIC_IMAGE}/images/${post.image}`}
+						src={`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`}
 						alt={post.title}
 						fill
 						priority

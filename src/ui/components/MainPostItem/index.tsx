@@ -21,7 +21,7 @@ export default function MainPostItem({ post }: MainPostItemProps) {
 			className={`${s.MainPostItem} p-3 d-flex align-items-end`}
 			style={{
 				background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), 
-                 url("${process.env.NEXT_PUBLIC_IMAGE}/images/${post.image}") 
+                 url("${process.env.NEXT_PUBLIC_IMAGE}/${post.image}") 
                  center / cover no-repeat`
 			}}
 
