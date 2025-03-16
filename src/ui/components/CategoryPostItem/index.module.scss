@@ -7,59 +7,20 @@
     overflow: hidden;
     position: relative;
 
-    // &:first-child {
-    //     grid-column: span 1;
+    .overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        inset: 0px;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    }
 
-    //     h3 {
-    //         font-size: 16px;
-    //         margin-bottom: 12px;
-    //     }
-    //     .statistic {
-    //         gap: 12px;
-
-    //         .counter {
-    //             font-size: 12px;
-    //         }
-
-    //         .icon {
-    //             width: 12px;
-    //             height: 12px;
-    //         }
-    //     }
-
-    //     @media (min-width: 768px) {
-    //         grid-column: span 2;
-
-    //         h3 {
-    //             font-size: 24px;
-    //             margin-bottom: 16px;
-    //         }
-    //         .statistic {
-    //             gap: 16px;
-
-    //             .counter {
-    //                 font-size: 16px;
-    //             }
-
-    //             .icon {
-    //                 width: 16px;
-    //                 height: 16px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // &:nth-child(3n + 1) {
-    //     grid-column: auto;
-
-    //     @media (min-width: 768px) {
-    //         grid-column: span 2;
-    //     }
-    // }
     article {
         max-width: 320px;
         min-width: 0;
         width: 100%;
+        z-index: 2;
     }
 
     h3 {

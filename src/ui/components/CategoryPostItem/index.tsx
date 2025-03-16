@@ -26,11 +26,12 @@ export default function CategoryPostItem({ post }: CategoryPostItemProps) {
 		//  center / cover no-repeat`
 		// }}
 		>
+			<div className={s.overlay}></div>
 			<Image
 				src={`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`}
 				alt={post.title}
 				layout="fill"
-				objectFit="cover"
+				style={{ objectFit: "cover" }}
 				priority
 				quality={75}
 			/>
