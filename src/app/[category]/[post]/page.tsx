@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ post: str
 
 	return {
 		metadataBase: new URL("https://top24.kz"),
-		title: fullPost.title, // Заголовок страницы
+		title: `TOP24.KZ | ${fullPost.title}`, // Заголовок страницы
 		description: fullPost.content.slice(0, 170) || `Читай пост: ${fullPost.title}`, // Описание
 		keywords: fullPost.title || 'новости, статьи, блог, контент', // Ключевые слова
 		robots: 'index, follow', // Разрешение индексации

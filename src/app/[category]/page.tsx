@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 
 	return {
 		metadataBase: new URL("https://top24.kz"),
-		title: `${categoryName} - Новости и статьи`,
+		title: `TOP24.KZ | ${categoryName.toUpperCase()} - Новости и статьи`,
 		description: `Читайте последние новости и статьи из категории "${categoryName}".`,
 		keywords: [`${categoryName}`, 'новости', 'статьи', 'блог', 'тренды'],
 		robots: 'index, follow', // Разрешает индексацию и следование по ссылкам

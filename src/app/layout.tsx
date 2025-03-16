@@ -4,8 +4,6 @@ import "../assets/css/globals.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import { Providers } from './providers';
 import Aside from '@/ui/components/Aside';
-import { Suspense } from 'react';
-import Loader from '@/ui/components/Loader';
 import Nav from '@/ui/components/Nav';
 import Header from '@/ui/components/Header';
 
@@ -14,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: 'TOP24.KZ - Самые популярные новости и статьи',
+	title: 'TOP24.KZ | Самые популярные новости и статьи',
 	description: "Top24.kz – свежие новости, аналитика и актуальные статьи. Будьте в курсе последних событий Казахстана и мира!",
 	icons: {
 		icon: [
@@ -48,8 +46,6 @@ export default async function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-
-
 
 	return (
 		<html lang="ru">
