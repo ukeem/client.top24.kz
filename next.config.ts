@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: "http",
-                hostname: "localhost",
-                port: "8080",
+                protocol: "https",
+                hostname: "top24.kz",
+                // port: "8080",
                 pathname: "/images/**",
                 search: "",
             },

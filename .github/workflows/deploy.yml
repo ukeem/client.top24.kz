@@ -19,8 +19,30 @@ jobs:
                   username: ${{ secrets.USER }}
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   script: |
+                      echo "🚀 Начало деплоя NextJS"
+
+                      export NVM_DIR="$HOME/.nvm"
+                      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                      nvm use 22
+                      echo "✅ Node.js настроен"
+
                       cd /var/www/client.top24.kz
-                      git pull origin main
-                      npm install
-                      npm run build
-                      pm2 restart client
+                      echo "✅ Перешли в папку проекта"
+
+                      echo "⚡ Обновляем код из репозитория..."
+                      git fetch --all
+                      git reset --hard origin/main
+                      git pull origin main || { echo "❌ Ошибка обновления репозитория!"; exit 1; }
+                      echo "✅ Репозиторий обновлён"
+
+                      echo "⚡ Устанавливаем зависимости..."
+                      npm install --verbose || { echo "❌ Ошибка установки зависимостей!"; exit 1; }
+                      echo "✅ Зависимости установлены"
+
+                      echo "⚡ Билдим проект..."
+                      npm run build || { echo "❌ Ошибка сборки проекта!"; exit 1; }
+                      echo "✅ Сборка завершена"
+
+                      echo "⚡ Перезапускаем сервер через PM2..."
+                      pm2 restart client || { echo "❌ Ошибка перезапуска PM2!"; exit 1; }
+                      echo "✅ Деплой NextJS завершён успешно!"
