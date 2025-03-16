@@ -30,7 +30,7 @@ export default function PostPage({
 			<div className={`${s.googleAdsense} mb-4`}></div>
 			<div className={`${s.image} mb-4`}>
 				<Image
-					src={`${process.env.NEXT_PUBLIC_IMAGE}/images/${post.image}`}
+					src={`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`}
 					alt={post.title}
 					fill
 					priority
