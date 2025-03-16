@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             .replace(/\s+/g, "-")
             .toLowerCase()}_${category.id}`,
         lastModified: new Date().toISOString(),
-        changeFrequency: "weekly" as const,
+        changeFrequency: "daily" as const,
         priority: 0.8,
     }));
 
