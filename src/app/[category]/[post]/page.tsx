@@ -9,12 +9,12 @@ export const dynamicParams = false
 
 export async function generateStaticParams() {
 	const posts = await getAllPosts()
-	console.log("📌 Список постов для генерации:", posts.map(p => ({
-		post: `${transliterate(p.title)
-			.replace(/[^a-zA-Zа-яА-Я0-9\s]/g, '')
-			.replace(/\s+/g, '-')
-			.toLowerCase()}_${p.id}`
-	})));
+	// console.log("📌 Список постов для генерации:", posts.map(p => ({
+	// 	post: `${transliterate(p.title)
+	// 		.replace(/[^a-zA-Zа-яА-Я0-9\s]/g, '')
+	// 		.replace(/\s+/g, '-')
+	// 		.toLowerCase()}_${p.id}`
+	// })));
 	return posts.map((post) => ({
 		category: `${transliterate(post.category.name)
 			.replace(/[^a-zA-Zа-яА-Я0-9\s]/g, '')
