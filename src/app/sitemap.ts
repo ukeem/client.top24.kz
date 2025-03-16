@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: post.createdAt || new Date().toISOString(),
         changeFrequency: "daily" as const,
         priority: 0.9,
-        images: [`${post.image}`],
+        images: [`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`],
     }));
 
     return [
