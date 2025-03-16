@@ -3,6 +3,7 @@ import s from './index.module.scss'
 import Link from 'next/link'
 import Views from '@/ui/icons/Views'
 import { transliterate } from 'transliteration'
+import Image from 'next/image'
 
 interface CategoryPostItemProps {
 	post: Post
@@ -19,12 +20,20 @@ export default function CategoryPostItem({ post }: CategoryPostItemProps) {
 					.replace(/\s+/g, '-')
 					.toLowerCase()}_${post.id}`}
 			className={`${s.CategoryPostItem} p-3 d-flex align-items-end`}
-			style={{
-				background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), 
-		     url("${process.env.NEXT_PUBLIC_IMAGE}/${post.image}") 
-		     center / cover no-repeat`
-			}}
+		// style={{
+		// 	background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), 
+		//  url("${process.env.NEXT_PUBLIC_IMAGE}/${post.image}") 
+		//  center / cover no-repeat`
+		// }}
 		>
+			<Image
+				src={`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`}
+				alt={post.title}
+				layout="fill"
+				objectFit="cover"
+				priority
+				loading='lazy'
+			/>
 			<article>
 				<h3>{post.title}</h3>
 				<div className={`${s.statistic} d-flex align-items-center`}>

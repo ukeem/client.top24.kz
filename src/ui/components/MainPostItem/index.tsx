@@ -3,6 +3,7 @@ import s from './index.module.scss'
 import Link from 'next/link'
 import Views from '@/ui/icons/Views'
 import { transliterate } from 'transliteration'
+import Image from 'next/image'
 
 interface MainPostItemProps {
 	post: Post
@@ -19,13 +20,21 @@ export default function MainPostItem({ post }: MainPostItemProps) {
 					.replace(/\s+/g, '-')
 					.toLowerCase()}_${post.id}`}
 			className={`${s.MainPostItem} p-3 d-flex align-items-end`}
-			style={{
-				background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), 
-                 url("${process.env.NEXT_PUBLIC_IMAGE}/${post.image}") 
-                 center / cover no-repeat`
-			}}
+		// style={{
+		// 	background: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), 
+		//      url("${process.env.NEXT_PUBLIC_IMAGE}/${post.image}") 
+		//      center / cover no-repeat`
+		// }}
 
 		>
+			<Image
+				src={`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`}
+				alt={post.title}
+				layout="fill"
+				objectFit="cover"
+				priority
+				loading='lazy'
+			/>
 			<article className="">
 				<h3 className={`nowrapText`}>{post.title}</h3>
 				<div className={`${s.statistic} d-flex align-items-center`}>
