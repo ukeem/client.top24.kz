@@ -23,7 +23,7 @@ export default function NavWrap({ categories }: NavProps) {
 	return (
 		<nav className={`${s.Nav} mb-4`}>
 			<div className="container">
-				<div className={`${s.NavWrap} d-flex justify-content-between`}>
+				<div className={`${s.NavWrap} d-flex`}>
 					<Link
 						href="/"
 						className={`${s.mainLink} ${pathname === '/' ? s.active : ''} d-flex align-items-center`}
