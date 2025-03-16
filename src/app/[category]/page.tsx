@@ -5,7 +5,7 @@ import { transliterate } from 'transliteration';
 
 export const revalidate = 3600
 
-export const dynamicParams = false
+// export const dynamicParams = false
 
 export async function generateStaticParams() {
 	const categories = await getAllCategories()
