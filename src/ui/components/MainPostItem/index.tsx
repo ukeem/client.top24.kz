@@ -31,9 +31,10 @@ export default function MainPostItem({ post }: MainPostItemProps) {
 			<Image
 				src={`${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`}
 				alt={post.title}
-				layout="fill"
+				fill
 				style={{ objectFit: "cover" }}
 				priority
+				sizes="100vw"
 				quality={75}
 			/>
 			<article className="">
