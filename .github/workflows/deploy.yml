@@ -34,6 +34,7 @@ jobs:
                       git reset --hard origin/main
                       git pull origin main || { echo "❌ Ошибка обновления репозитория!"; exit 1; }
                       echo "✅ Репозиторий обновлён"
+                      rm -rf .next node_modules package-lock.json
 
                       echo "⚡ Устанавливаем зависимости..."
                       npm install --verbose || { echo "❌ Ошибка установки зависимостей!"; exit 1; }

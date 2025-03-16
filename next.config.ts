@@ -14,7 +14,12 @@ const nextConfig: NextConfig = {
             },
         ],
     },
-    // output: "export",
+    // output: "export",\
+    env: {
+        NEXT_PUBLIC_API_URL: "https://top24.kz/api",
+        NEXT_PUBLIC_IMAGE: "https://top24.kz/images",
+        NEXT_PUBLIC_SITE: "https://top24.kz",
+    },
 };
 
 export default nextConfig;
