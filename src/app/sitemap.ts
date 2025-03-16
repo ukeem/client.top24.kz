@@ -4,6 +4,9 @@ import type { MetadataRoute } from "next";
 import { getAllCategories, getAllPosts } from "@/services/api";
 import { transliterate } from "transliteration";
 
+export const revalidate = 3600;
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const siteUrl = process.env.NEXT_PUBLIC_SITE || "https://top24.kz";
 
