@@ -9,7 +9,7 @@ export const dynamicParams = false
 
 export async function generateStaticParams() {
 	const posts = await getAllPosts()
-
+	console.log("📌 Список постов для генерации:", posts);
 	return posts.map((post) => ({
 		post: `${transliterate(post.title)
 			.replace(/[^a-zA-Zа-яА-Я0-9\s]/g, '')
@@ -72,11 +72,15 @@ export async function generateMetadata({ params }: { params: Promise<{ post: str
 	};
 }
 
-export default async function CategoryPage({ params }: { params: Promise<{ post: string }> }) {
+export default async function PostsPage({ params }: { params: Promise<{ post: string }> }) {
 
 	const { post } = await params
 	const id = post.split("_")[1]
 	const fullPost = await getPostById(id);
+	if (!id) {
+		console.error("❌ Ошибка: некорректный формат параметра post", post);
+		throw new Error("Некорректный формат параметра post");
+	}
 
 	const postUrl = `${process.env.NEXT_PUBLIC_SITE}/${transliterate(fullPost.category.name)
 		.replace(/[^a-zA-Zа-яА-Я0-9\s]/g, '')
