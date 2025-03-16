@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Получаем все категории и посты из API
     const categories = await getAllCategories();
     const posts = await getAllPosts();
+    console.log(posts.length);
 
     const categoryUrls = categories.map((category) => ({
         url: `${siteUrl}/${transliterate(category.name)
@@ -35,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: post.createdAt || new Date().toISOString(),
         changeFrequency: "daily" as const,
         priority: 0.9,
+        images: [`${post.image}`],
     }));
 
     return [
