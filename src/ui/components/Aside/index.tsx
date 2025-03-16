@@ -13,6 +13,7 @@ import AsideList from '../AsideList'
 export default async function Aside() {
 
 	const posts = await getAsidePosts()
+
 	return (
 		<aside>
 			<div className={s.asideWrap}>
