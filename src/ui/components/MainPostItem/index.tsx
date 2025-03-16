@@ -33,7 +33,7 @@ export default function MainPostItem({ post }: MainPostItemProps) {
 				layout="fill"
 				objectFit="cover"
 				priority
-				loading='lazy'
+				quality={75}
 			/>
 			<article className="">
 				<h3 className={`nowrapText`}>{post.title}</h3>

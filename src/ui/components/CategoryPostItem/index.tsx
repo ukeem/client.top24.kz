@@ -32,7 +32,7 @@ export default function CategoryPostItem({ post }: CategoryPostItemProps) {
 				layout="fill"
 				objectFit="cover"
 				priority
-				loading='lazy'
+				quality={75}
 			/>
 			<article>
 				<h3>{post.title}</h3>
