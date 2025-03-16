@@ -35,7 +35,7 @@ export default function MainPostItem({ post }: MainPostItemProps) {
 				style={{ objectFit: "cover" }}
 				priority
 				sizes="100vw"
-				quality={75}
+				quality={50}
 			/>
 			<article className="">
 				<h3 className={`nowrapText`}>{post.title}</h3>

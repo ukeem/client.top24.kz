@@ -34,7 +34,7 @@ export default function CategoryPostItem({ post }: CategoryPostItemProps) {
 				style={{ objectFit: "cover" }}
 				priority
 				sizes="100vw"
-				quality={75}
+				quality={50}
 			/>
 			<article>
 				<h3>{post.title}</h3>
