@@ -3,14 +3,41 @@ import s from './index.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import { transliterate } from 'transliteration'
+import Script from 'next/script'
 
 interface AsideListItemProps {
 	post: Post
 }
 
 export default function AsideListItem({ post }: AsideListItemProps) {
+
+
+	const jsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": `${post.title}`,
+		"author": {
+			"@type": "Person",
+			"name": "TOP24.KZ"
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "TOP24.KZ",
+			"logo": {
+				"@type": "ImageObject",
+				"url": `${process.env.NEXT_PUBLIC_IMAGE}/${post.image}`
+			}
+		},
+		"datePublished": `${post.createdAt}`,
+		"dateModified": `${post.createdAt}`
+	}
+
 	return (
 		<div className={s.AsideListItemWrap}>
+			<Script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			<Link
 				href={`/${transliterate(post.category.name)
 					.replace(/[^a-zA-Zа-яА-Я0-9\s]/g, '')
