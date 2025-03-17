@@ -67,6 +67,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 	const { category } = await params
 	const id = category.split("_")[1]
 	const posts = await getPostsByCategoryId(id);
+
+	if (!posts.length) return {}
+
 	const categoryName = posts[0].category.name
 
 	return (
