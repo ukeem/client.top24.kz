@@ -12,8 +12,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://top24.kz"),
 	title: 'TOP24.KZ | Самые популярные новости и статьи',
 	description: "Top24.kz – свежие новости, аналитика и актуальные статьи. Будьте в курсе последних событий Казахстана и мира!",
+	robots: 'index, follow', // Разрешает индексацию и следование по ссылкам
+	alternates: {
+		canonical: "https://top24.kz", // Канонический URL страницы
+	},
 	icons: {
 		icon: [
 			{ url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
