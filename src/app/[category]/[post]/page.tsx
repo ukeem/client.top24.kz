@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 import { transliterate } from 'transliteration';
 
-export const revalidate = 3600
-// export const dynamicParams = false
+// export const revalidate = 3600
+export const dynamicParams = false
 
 export async function generateStaticParams() {
 	const posts = await getAllPosts()
