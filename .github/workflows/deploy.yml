@@ -35,6 +35,10 @@ jobs:
                       git pull origin main || { echo "❌ Ошибка обновления репозитория!"; exit 1; }
                       echo "✅ Репозиторий обновлён"
 
+                      echo "⚡ Удаляем .next, npded_modules, ..."
+                      rm -rf .next node_modules package-lock.json
+                      echo "✅ .next node_modules package-lock.json удалены"
+
                       echo "⚡ Устанавливаем зависимости..."
                       npm install --verbose || { echo "❌ Ошибка установки зависимостей!"; exit 1; }
                       echo "✅ Зависимости установлены"
