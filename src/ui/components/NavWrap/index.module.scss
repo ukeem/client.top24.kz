@@ -17,6 +17,7 @@
             height: 60px;
             text-transform: capitalize;
             line-height: 60px;
+            white-space: nowrap;
 
             &.active {
                 color: var(--accent);
