@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<{ post: str
 			description: fullPost.content.slice(0, 170) || `Читай пост: ${fullPost.title}`,
 			images: [
 				{
-					url: imageUrl,
+					url: `${process.env.NEXT_PUBLIC_SITE}/images/${imageUrl}`,
 					alt: fullPost.title,
 				},
 			],
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ post: str
 			card: 'summary_large_image',
 			title: fullPost.title,
 			description: fullPost.content.slice(0, 170) || `Читай пост: ${fullPost.title}`,
-			images: [imageUrl],
+			images: [`${process.env.NEXT_PUBLIC_SITE}/images/${imageUrl}`],
 		},
 		other: {
 			'og:type': 'website',

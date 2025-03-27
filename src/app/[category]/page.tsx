@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 			url,
 			title: `${categoryName} - Новости и статьи`,
 			description: `Читайте последние новости и статьи из категории "${categoryName}".`,
-			images: firstPost?.image ? [{ url: firstPost.image, width: 1200, height: 630 }] : [],
+			images: firstPost?.image ? [{ url: `${process.env.NEXT_PUBLIC_SITE}/images/${firstPost?.image}`, width: 1200, height: 630 }] : [],
 			siteName: 'TOP24.KZ',
 			locale: 'ru_RU',
 		},
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 			card: 'summary_large_image',
 			title: `${categoryName} - Новости и статьи`,
 			description: `Читайте последние новости и статьи из категории "${categoryName}".`,
-			images: firstPost?.image ? [firstPost.image] : [],
+			images: firstPost?.image ? [`${process.env.NEXT_PUBLIC_SITE}/images/${firstPost?.image}`] : [],
 		},
 		other: {
 			'og:type': 'website',
